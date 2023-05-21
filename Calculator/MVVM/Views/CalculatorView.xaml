@@ -1,0 +1,131 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calculator.MVVM.Views.CalculatorView"
+             Title="Calculadora">
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#F8F8F8" />
+            <Setter Property="TextColor" Value="#666666" />
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="CornerRadius" Value="5" />
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="Margin" Value="5" />
+        </Style>
+        <Style TargetType="Frame">
+            <Setter Property="HasShadow" Value="True" />
+            <Setter Property="BorderColor" Value="#DDDDDD" />
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="Margin" Value="5" />
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid Padding="5,0" ColumnSpacing="1" RowSpacing="1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.ColumnSpan="4"
+                FontSize="40"
+               HorizontalTextAlignment="End" LineBreakMode="NoWrap"
+               TextColor="#333333"
+               Text="{Binding MathExpression}" 
+               VerticalTextAlignment="Center"
+                Margin="0,0,30,0"/>
+
+        <Label Grid.Row="1" Grid.ColumnSpan="4"
+                FontSize="48"
+               HorizontalTextAlignment="End" LineBreakMode="NoWrap"
+               Text="{Binding Result}" TextColor="#FFA500"
+               VerticalTextAlignment="Center"
+               Margin="0,0,30,0" /> 
+
+        <Button Grid.Row="2" Grid.Column="0"
+                BackgroundColor="#79F050" Command="{Binding AddCommandClear}"
+                Text="AC" />
+
+        <Button Grid.Row="2" Grid.Column="1"
+                BackgroundColor="#79F050" Command="{Binding AddCommandDelete}"
+                Text="⌫" />
+
+        <Button Grid.Row="2" Grid.Column="2"
+                BackgroundColor="#79F050" Command="{Binding AddCommandNumber1}" CommandParameter="%"
+                Text="%" />
+
+        <Button Grid.Row="3" Grid.Column="0"
+                BackgroundColor="#F8F8F8" Command="{Binding AddCommandNumber1}" CommandParameter="1"
+                Text="1" />
+
+        <Button Grid.Row="3" Grid.Column="1"
+                BackgroundColor="#F8F8F8" Command="{Binding AddCommandNumber1}" CommandParameter="2"
+                Text="2" />
+
+        <Button Grid.Row="3" Grid.Column="2"
+                BackgroundColor="#F8F8F8" Command="{Binding AddCommandNumber1}" CommandParameter="3"
+                Text="3" />
+
+        <Button Grid.Row="4" Grid.Column="0"
+                BackgroundColor="#F8F8F8" Command="{Binding AddCommandNumber1}" CommandParameter="4"
+                Text="4" />
+
+        <Button Grid.Row="4" Grid.Column="1"
+                BackgroundColor="#F8F8F8" Command="{Binding AddCommandNumber1}" CommandParameter="5"
+                Text="5" />
+
+        <Button Grid.Row="4" Grid.Column="2"
+                BackgroundColor="#F8F8F8" Command="{Binding AddCommandNumber1}" CommandParameter="6"
+                Text="6" />
+
+        <Button Grid.Row="5" Grid.Column="0"
+                BackgroundColor="#F8F8F8" Command="{Binding AddCommandNumber1}" CommandParameter="7"
+                Text="7" />
+
+        <Button Grid.Row="5" Grid.Column="1"
+                BackgroundColor="#F8F8F8" Command="{Binding AddCommandNumber1}" CommandParameter="8"
+                Text="8" />
+
+        <Button Grid.Row="5" Grid.Column="2"
+                BackgroundColor="#F8F8F8" Command="{Binding AddCommandNumber1}" CommandParameter="9"
+                Text="9" />
+
+        <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"
+                BackgroundColor="#F8F8F8" Command="{Binding AddCommandNumber1}" CommandParameter="0"
+                Text="0" />
+
+        <Button Grid.Row="6" Grid.Column="2"
+                BackgroundColor="#F8F8F8" Command="{Binding AddCommandNumber1}" CommandParameter="."
+                Text="." />
+
+        <Button Grid.Row="2" Grid.Column="3"
+                BackgroundColor="#5086F0" Command="{Binding AddCommandNumber1}" CommandParameter="/"
+                Text="/" TextColor="White" />
+
+        <Button Grid.Row="3" Grid.Column="3"
+                BackgroundColor="#5086F0" Command="{Binding AddCommandNumber1}" CommandParameter="*"
+                Text="*" TextColor="White" />
+
+        <Button Grid.Row="4" Grid.Column="3"
+                BackgroundColor="#5086F0" Command="{Binding AddCommandNumber1}" CommandParameter="-"
+                Text="-" TextColor="White" />
+
+        <Button Grid.Row="5" Grid.Column="3"
+                BackgroundColor="#5086F0" Command="{Binding AddCommandNumber1}" CommandParameter="+"
+                Text="+" TextColor="White" />
+
+        <Button Grid.Row="6" Grid.Column="3"
+                BackgroundColor="#5086F0" Command="{Binding AddCommand}"
+                Text="=" TextColor="White" />
+    </Grid>
+</ContentPage>
